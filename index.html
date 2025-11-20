@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projet 3PE - Cybersécurité - DESHORMEAUX Vivian</title>
+    <style>
+        /* --- STYLE GLOBAL (Respect des consignes : 1 police, pas de soulignement sauf liens) --- */
+        body {
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; /* Police sans-serif sobre */
+            color: #333;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #fff;
+        }
+
+        /* Liens : Seuls éléments soulignés (Consigne stricte) */
+        a {
+            color: #000;
+            text-decoration: underline;
+            font-weight: bold;
+        }
+
+        /* Conteneur principal pour centrer le contenu */
+        .container {
+            max-width: 960px;
+            margin: 0 auto;
+            padding: 0 20px 60px 20px;
+        }
+
+        /* --- EN-TÊTE --- */
+        header {
+            background-color: #b30000; /* Rouge style exemple */
+            color: white;
+            padding: 50px 20px;
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        header h1 {
+            margin: 0;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            font-size: 2.8em;
+            line-height: 1.2;
+        }
+
+        header h2 {
+            font-size: 1.1em;
+            font-weight: normal;
+            margin-top: 15px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border: none; /* Annule le style des titres h2 du corps */
+        }
+
+        header h2::after {
+            display: none; /* Pas de ligne sous le sous-titre de l'en-tête */
+        }
+
+        /* --- TITRES DE SECTION (Style "LIVRE", "ARTICLE") --- */
+        h2.section-title {
+            text-align: center;
+            text-transform: uppercase;
+            color: #222;
+            font-size: 2em;
+            margin-top: 80px;
+            margin-bottom: 50px;
+            position: relative;
+            letter-spacing: 2px;
+        }
+
+        /* Ligne décorative rouge sous les titres */
+        h2.section-title::after {
+            content: "";
+            display: block;
+            width: 80px;
+            height: 4px;
+            background-color: #b30000;
+            margin: 20px auto 0;
+        }
+
+        h3 {
+            text-align: center;
+            text-transform: uppercase;
+            font-size: 1.4em;
+            color: #444;
+            margin-top: 60px;
+            margin-bottom: 40px;
+            letter-spacing: 1px;
+        }
+
+        /* --- BLOC SOURCE (Image à gauche, Texte à droite) --- */
+        .source-block {
+            display: flex;
+            margin-bottom: 60px; /* Espacement entre les sources */
+            gap: 40px;
+            align-items: flex-start;
+            border-bottom: 1px solid #eee; /* Légère séparation visuelle optionnelle */
+            padding-bottom: 40px;
+        }
+
+        .source-block:last-child {
+            border-bottom: none;
+        }
+
+        .source-img {
+            flex: 0 0 220px; /* Largeur fixe pour la colonne image */
+        }
+
+        /* Placeholder pour l'image (cadre gris en attendant ta capture) */
+        .placeholder-img {
+            width: 100%;
+            height: 180px;
+            background-color: #f4f4f4;
+            border: 2px dashed #ccc;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #888;
+            font-size: 0.9em;
+            font-weight: bold;
+            text-align: center;
+            padding: 10px;
+            box-sizing: border-box;
+        }
+
+        .source-text {
+            flex: 1; /* Prend tout le reste de la place */
+        }
+
+        /* --- TEXTE DES SOURCES --- */
+        .bibliographie-ref {
+            margin-bottom: 20px;
+            font-weight: bold;
+            font-size: 1.05em;
+            border-left: 4px solid #b30000;
+            padding-left: 15px;
+        }
+
+        .rubrique {
+            margin-bottom: 15px;
+            font-size: 0.95em;
+            text-align: justify;
+        }
+
+        .rubrique strong {
+            color: #b30000; /* Rouge pour "Requête" et "Motif" */
+            text-transform: uppercase;
+            font-size: 0.9em;
+        }
+
+        /* --- INTRO ET CONCLUSION --- */
+        .text-justified {
+            text-align: justify;
+            margin-bottom: 30px;
+            font-size: 1.05em;
+        }
+
+        .keywords-cloud {
+            text-align: center;
+            margin: 40px auto;
+            width: 80%;
+        }
+
+        /* --- FOOTER --- */
+        footer {
+            text-align: center;
+            font-size: 0.8em;
+            color: #666;
+            margin-top: 50px;
+            padding-top: 20px;
+            border-top: 1px solid #ddd;
+        }
+
+        /* Responsive pour mobile */
+        @media (max-width: 700px) {
+            .source-block {
+                flex-direction: column;
+            }
+            .source-img {
+                width: 100%;
+                flex: none;
+                margin-bottom: 20px;
+            }
+        }
+
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>LE MÉTIER D'EXPERT<br>EN CYBERSÉCURITÉ</h1>
+    <h2>DESHORMEAUX Vivian — TD 3b</h2>
+</header>
+
+<div class="container">
+
+    <h2 class="section-title">INTRODUCTION</h2>
+
+    <div class="text-justified">
+        <p>
+            Ce projet de poursuite d'études (3PE) s'intéresse au métier stratégique d'<strong>expert en cybersécurité</strong> au sein des forces de la sûreté nationale (Armée, Gendarmerie, ANSSI). Dans un contexte géopolitique tendu, la protection des données souveraines est devenue une priorité défense. Mon axe de recherche vise à comprendre les spécificités de l'exercice de ce métier sous le statut militaire ou civil d'État : quelles sont les voies d'accès, les réalités du terrain et les perspectives d'évolution par rapport au secteur privé ?
+        </p>
+    </div>
+
+    <div class="keywords-cloud">
+        <img src="nuage-de-mots.png" alt="Nuage de mots-clefs : Cyberdéfense, Armée, Ministère" style="width:100%; max-width: 600px; height:auto; border: 1px solid #ccc; padding: 5px; box-shadow: 2px 2px 5px rgba(0,0,0,0.1);">
+
+        <br>
+        <span style="font-size: 0.9em; font-style: italic; color: #666;">
+                Nuage de mots-clefs généré avec <a href="https://nuagedemots.co/" target="_blank" style="color: #666; text-decoration: underline;">nuagedemots.co</a> et recadré via <a href="https://www.iloveimg.com/" target="_blank" style="color: #666; text-decoration: underline;">iloveimg.com</a>.
+            </span>
+    </div>
+
+
+    <h2 class="section-title">BIBLIOGRAPHIE COMMENTÉE</h2>
+
+    <h3>LIVRE</h3>
+
+    <div class="source-block">
+        <div class="source-img">
+            <img src="livre.jpg" alt="Couverture La menace cyber" style="width:100%; height:auto; border: 1px solid #ccc; box-shadow: 2px 2px 5px rgba(0,0,0,0.1);">
+
+            <div style="font-size: 0.9em; color: #333; margin-top: 10px; line-height: 1.4;">
+                Couverture du livre <em>La menace cyber</em>, disponible sur le site des éditions ENI.
+            </div>
+        </div>
+
+        <div class="source-text">
+            <p class="bibliographie-ref">
+                MAHIEUX, Philippe. <em>La menace cyber : mieux la connaître pour mieux s'en protéger</em> [en ligne]. Nantes : Éditions ENI, 2024 [consulté le 20 novembre 2025]. Disponible à l'adresse : <a href="https://www.editions-eni.fr/livre/la-menace-cyber-mieux-la-connaitre-pour-mieux-s-en-proteger-9782409043857" target="_blank">https://www.editions-eni.fr/livre/la-menace-cyber-mieux-la-connaitre-pour-mieux-s-en-proteger-9782409043857</a>
+            </p>
+
+            <p class="rubrique">
+                <strong>Requête :</strong> J'ai utilisé le moteur de recherche Google avec les mots-clefs "Livre menace cyber éditions ENI" pour trouver un ouvrage de vulgarisation technique récent.
+            </p>
+
+            <p class="rubrique">
+                <strong>Motif du choix :</strong> J'ai sélectionné ce livre car il est très récent (2024) et écrit par un expert reconnu (Philippe Mahieux). Il correspond parfaitement à mon besoin de comprendre les types d'attaques (Ransomware, Phishing) que je devrai contrer dans mon futur métier.
+            </p>
+        </div>
+    </div>
+
+    <h3>ARTICLE DE REVUE EN LIGNE</h3>
+
+    <div class="source-block">
+        <div class="source-img">
+            <img src="article.jpg" alt="Couverture Revue Défense Nationale" style="width:100%; height:auto; border: 1px solid #ccc; box-shadow: 2px 2px 5px rgba(0,0,0,0.1);">
+
+            <div style="font-size: 0.9em; color: #333; margin-top: 10px; line-height: 1.4;">
+                Couverture de la <em>Revue Défense Nationale</em>, illustrant l'article consulté en ligne sur le site officiel de la revue.
+            </div>
+        </div>
+
+        <div class="source-text">
+            <p class="bibliographie-ref">
+                La contribution du nouveau ComCyberGend à l'aune du triptyque défense, sécurité et coopération nationale. <em>Revue Défense Nationale</em> [en ligne]. 2025 [consulté le 20 novembre 2025]. Disponible à l'adresse : <a href="https://www.defnat.com/e-RDN/vue-article-cahier.php?carticle=500" target="_blank">https://www.defnat.com/e-RDN/vue-article-cahier.php?carticle=500</a>
+            </p>
+
+            <p class="rubrique">
+                <strong>Requête :</strong> Recherche effectuée sur Google Scholar et sur le portail des revues militaires avec les termes "Gendarmerie cyberdéfense" et "Commandement Cyber".
+            </p>
+
+            <p class="rubrique">
+                <strong>Motif du choix :</strong> Cet article est essentiel car il traite spécifiquement de la Gendarmerie (ComCyberGend). Il permet de distinguer les missions de police judiciaire (traque des cybercriminels) des missions de guerre pure (Armée de Terre), ce qui m'aide à choisir entre les deux voies.
+            </p>
+        </div>
+    </div>
+
+    <h3>SITES WEB</h3>
+
+    <div class="source-block">
+        <div class="source-img">
+            <a href="https://cyber.gouv.fr/publications/panorama-des-metiers-de-la-cybersecurite" target="_blank" style="text-decoration: none;">
+                <img src="site_anssi.jpg" alt="Aperçu site ANSSI" style="width:100%; height:auto; border: 1px solid #ccc;">
+            </a>
+
+            <div style="color: #b30000; font-size: 1.1em; font-weight: bold; margin-top: 10px; margin-bottom: 5px;">
+                Panorama des métiers de la cybersécurité
+            </div>
+
+            <div style="font-size: 0.9em; color: #555; line-height: 1.3;">
+                Découvrez les 31 profils métiers de la cybersécurité, leurs missions, les compétences requises et les voies d'accès au sein de la fonction publique.
+            </div>
+        </div>
+
+        <div class="source-text">
+            <p class="bibliographie-ref">
+                ANSSI. <em>Panorama des métiers de la cybersécurité</em> [en ligne]. 2023 [consulté le 20 novembre 2025]. Disponible à l'adresse : <a href="https://cyber.gouv.fr/publications/panorama-des-metiers-de-la-cybersecurite" target="_blank">https://cyber.gouv.fr/publications/panorama-des-metiers-de-la-cybersecurite</a>
+            </p>
+
+            <p class="rubrique">
+                <strong>Requête :</strong> pour trouver cette page, j'ai effectué la requête "ANSSI fiches métiers" sur le moteur de recherche Google.
+            </p>
+
+            <p class="rubrique">
+                <strong>Motif du choix :</strong> L'ANSSI est l'organisme officiel de référence. Ce site m'a permis de trouver une information fiable sur les dénominations exactes des postes. On y trouve les fiches de poste détaillées, les études à effectuer et les perspectives de carrière.
+            </p>
+        </div>
+    </div>
+
+    <div class="source-block">
+        <div class="source-img">
+            <a href="https://www.sengager.fr/tous-nos-postes/specialiste-cybersecurite" target="_blank" style="text-decoration: none;">
+                <img src="site_armee.jpg" alt="Aperçu site Sengager" style="width:100%; height:auto; border: 1px solid #ccc;">
+            </a>
+
+            <div style="color: #b30000; font-size: 1.1em; font-weight: bold; margin-top: 10px; margin-bottom: 5px;">
+                Spécialiste cybersécurité
+            </div>
+
+            <div style="font-size: 0.9em; color: #555; line-height: 1.3;">
+                Devenez le rempart numérique de nos forces. Fiche complète sur le métier de combattant cyber : solde, pré-requis sportifs et parcours de formation militaire.
+            </div>
+        </div>
+
+        <div class="source-text">
+            <p class="bibliographie-ref">
+                ARMÉE DE TERRE. <em>Fiche métier : Spécialiste cybersécurité</em> [en ligne]. [s.d.] [consulté le 20 novembre 2025]. Disponible à l'adresse : <a href="https://www.sengager.fr/tous-nos-postes/specialiste-cybersecurite" target="_blank">https://www.sengager.fr/tous-nos-postes/specialiste-cybersecurite</a>
+            </p>
+
+            <p class="rubrique">
+                <strong>Requête :</strong> : j'ai navigué dans l'onglet "Nos emplois" du site officiel Sengager.fr en filtrant par la catégorie "Informatique et Télécoms".
+            </p>
+
+            <p class="rubrique">
+                <strong>Motif du choix :</strong> C'est le portail de recrutement officiel. Ce site est indispensable car il fournit les informations pratiques (solde, âge limite, tests physiques) que l'on ne trouve pas dans les livres théoriques. J'y ai aussi découvert les possibilités d'évolution vers le grade de sous-officier.
+            </p>
+        </div>
+    </div>
+
+    <div class="source-block">
+        <div class="source-img">
+            <a href="http://www.defense.gouv.fr/nos-expertises/cyberdefense-au-ministere-armees-anciens-combattants" target="_blank" style="text-decoration: none;">
+                <img src="site_ministere.jpg" alt="Aperçu site Ministère" style="width:100%; height:auto; border: 1px solid #ccc;">
+            </a>
+
+            <div style="color: #b30000; font-size: 1.1em; font-weight: bold; margin-top: 10px; margin-bottom: 5px;">
+                La cyberdéfense au Ministère
+            </div>
+
+            <div style="font-size: 0.9em; color: #555; line-height: 1.3;">
+                Comprendre l'organisation stratégique du commandement de la cyberdéfense (COMCYBER) et les enjeux de souveraineté nationale.
+            </div>
+        </div>
+
+        <div class="source-text">
+            <p class="bibliographie-ref">
+                MINISTÈRE DES ARMÉES. <em>La cyberdéfense au ministère des Armées</em> [en ligne]. 2024 [consulté le 20 novembre 2025]. Disponible à l'adresse : <a href="http://www.defense.gouv.fr/nos-expertises/cyberdefense-au-ministere-armees-anciens-combattants" target="_blank">http://www.defense.gouv.fr/nos-expertises/cyberdefense-au-ministere-armees-anciens-combattants</a>
+            </p>
+
+            <p class="rubrique">
+                <strong>Requête :</strong> : pour trouver cette page, j'ai tapé les mots-clés "Organisation cyberdéfense France" et "Ministère armées cyber" sur Google.
+            </p>
+
+            <p class="rubrique">
+                <strong>Motif du choix :</strong> Ce site institutionnel permet de situer mon futur métier dans son contexte global. Il explique la chaîne de commandement et la mission de défense qui donne son sens à la carrière technique visée.
+            </p>
+        </div>
+    </div>
+
+    <h3>VIDÉO</h3>
+
+    <div class="source-block">
+        <div class="source-img">
+            <a href="https://oniseptv.onisep.fr/video/expert-cybersecurite-dans-larmee" target="_blank" style="text-decoration: none;">
+                <img src="video_onisep.jpg" alt="Aperçu vidéo Onisep" style="width:100%; height:auto; border: 1px solid #ccc;">
+            </a>
+
+            <div style="color: #b30000; font-size: 1.1em; font-weight: bold; margin-top: 10px; margin-bottom: 5px;">
+                Expert cybersécurité dans l'armée de terre
+            </div>
+
+            <div style="font-size: 0.9em; color: #555; line-height: 1.3;">
+                Témoignage vidéo d'un officier expert en lutte informatique défensive (LID). Il présente son quotidien en caserne, son matériel et ses missions de protection des réseaux militaires.
+            </div>
+        </div>
+
+        <div class="source-text">
+            <p class="bibliographie-ref">
+                ONISEP. <em>Expert cybersécurité dans l'armée de terre</em> [en ligne]. Onisep TV, 2022, 1 vidéo [consulté le 20 novembre 2025]. Disponible à l'adresse : <a href="https://oniseptv.onisep.fr/video/expert-cybersecurite-dans-larmee" target="_blank">https://oniseptv.onisep.fr/video/expert-cybersecurite-dans-larmee</a>
+            </p>
+
+            <p class="rubrique">
+                <strong>Requête :</strong> : pour trouver ce témoignage, j'ai effectué une recherche sur Google Vidéos avec les termes "Métier cyber armée témoignage".
+            </p>
+
+            <p class="rubrique">
+                <strong>Motif du choix :</strong> J'ai choisi cette vidéo car elle apporte un témoignage humain direct, complémentaire aux textes institutionnels. Elle permet de visualiser concrètement l'environnement de travail (locaux, tenue militaire, configuration des écrans) et de mieux se projeter dans le quotidien opérationnel du métier.
+            </p>
+        </div>
+    </div>
+
+    <h2 class="section-title">CONCLUSION</h2>
+
+    <div class="text-justified">
+        <p style="margin-bottom: 20px;">
+            Ce projet m'a permis de structurer mon approche du métier d'expert en cybersécurité. Voici le bilan de ce travail :
+        </p>
+
+        <ul style="list-style-type: square; padding-left: 20px; line-height: 1.8;">
+            <li style="margin-bottom: 15px;">
+                <strong>Temps passé :</strong> La réalisation globale de ce projet a nécessité environ <strong>8 heures</strong> de travail. Ce temps comprend la recherche documentaire exploratoire, la sélection rigoureuse des sources fiables (tri des informations) et le développement technique de la page web.
+            </li>
+
+            <li style="margin-bottom: 15px;">
+                <strong>Liste des outils utilisés :</strong>
+                <br>— <em>Recherche documentaire :</em> Moteurs de recherche Perplexity et Google
+                <br>— <em>Traitement des images :</em> Nuagedemots.co (générateur), Iloveimg.com (recadrage).
+                <br>— <em>Développement web :</em> WebStorm (IDE) pour la structuration HTML et la mise en forme CSS.
+            </li>
+
+            <li style="margin-bottom: 15px;">
+                <strong>Analyse et appréciation du projet :</strong>
+                Au regard du marché de l'emploi, mes recherches confirment que la cybersécurité est un secteur en "tension absolue", offrant une sécurité de l'emploi rare. J'ai appris que pour travailler dans la Sûreté Nationale, le profil purement technique ne suffit pas : il faut acquérir une culture militaire et accepter les contraintes liées au "Secret-Défense". Ce projet conforte mon choix : les parcours offerts par l'Armée et la Gendarmerie (formation continue, montée en grade) sont plus structurés que dans le privé pour un début de carrière.
+            </li>
+        </ul>
+    </div>
+
+</div> <footer>
+    <p>Projet Universitaire 3PE — DESHORMEAUX Vivian (TD 3b) — Année 2025</p>
+</footer>
+
+</body>
+</html>
